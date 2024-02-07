@@ -11,10 +11,9 @@ app.use(express.json());
 
 app.use(cors());
 
-// mongoose.connect(
-//   "mongodb+srv://amolraipurear:amol1234@cluster0.f72lrnq.mongodb.net/School"
-// );
-mongoose.connect("mongodb://127.0.0.1:27017/School");
+mongoose.connect(
+  "mongodb+srv://tushargedam23:tushar12@cluster0.8decbb4.mongodb.net/login-page"
+);
 
 app.post("/", async (req, res) => {
   //   SignupModule.create(req.body)
@@ -65,14 +64,15 @@ app.get("/student", async (req, res) => {
   //   StudentModule.find()
   //     .then((students) => res.json(students))
   //     .catch((err) => res.json(err));
+  //
 });
 
 app.get("/teacher", async (req, res) => {
   let data = await TeacherModule.find();
   res.json(data);
-  //   StudentModule.find()
-  //     .then((students) => res.json(students))
-  //     .catch((err) => res.json(err));
+  // TeacherModule.find()
+  //   .then((students) => res.json(students))
+  //   .catch((err) => res.json(err));
 });
 
 app.listen(5000, () => {
